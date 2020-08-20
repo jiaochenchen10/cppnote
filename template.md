@@ -6,11 +6,70 @@
 
 
 STL组成部分：
-* containers 容器
-* iterators 迭代器（将*、->、++等指针相关操作进行重载的类模板）
-* algorithms 算法
-* function object 函数对象
-* memory allocation 空间分配器
+* `containers` 容器
+  * 顺序容器
+    * `vector`
+    * `list`
+    * `deque`
+  * 关联容器
+    * `set`
+    * `multiset`
+    * `map`
+    * `multimap`
+  * 容器适配器
+    * `stack`
+    * `queue`
+    * `priority_queue`
+* `iterators` 迭代器（将*、->、++等指针相关操作进行重载的类模板）
+  * 一种泛型指针
+  * 迭代器一般与容器共同使用
+  * 有些迭代器与容器无关
+    * `istream_iterator`
+    * `ostream_iterator`
+* `algorithms` 算法
+* `function object` 函数对象
+* `memory allocation` 空间分配器
 
+| 容器类型 |  头部   |      |
+| :------: | :-----: | :--: |
+|  vector  | `<vector>` | 快尾部 |
+|  deque   | `<deque>` | 快头尾 |
+|   list   |`<list>`  | 快任意位置 |
+|   set    |  `<set>`  |      |
+| map | `<map>` | 不允许重复关键字 |
+| multimap | `<map>` | 允许重复关键字 |
+|  stack  | `<stack>` |      |
+| queue | `<queue>` |      |
+| priority_queue | `<queue>` |      |
+
+## 所有容器共同函数
+
+| 函数                | 描述                                                         |
+| ------------ | ------------|
+| 无参构造函数        | 构造一个空容器 |
+| 带参构造函数 | 每个容器都有多个带有参数的构造函数 |
+| 拷贝构造函数 | 创建一个容器，从一个已有的同类型容器中复制元素 |
+| 析构函数 | 容器销毁后执行清理工作 |
+| `empty()` | 若容器中没有元素则返回空 |
+| `size()` | 返回容器中的元素数目 |
+| `operator=`         | 将容器内容复制到另一个容器 |
+| 关系运算符 | 顺序比较两个容器中的对应元素，来确定大小关系 |
+|              |                |
+| `c1.swap(c2)` | 交换两个容器的内容 |
+| `c1.max_size()` | 返回一个容器中可以容纳的最大元素数量 |
+| `c.clear()` | 删除容中的所有元素 |
+| `c.begin()` | 返回容器首元素的迭代器 |
+| `c.end()` | 返回容器尾元素之后位置的迭代器 |
+| `c.rbegin()` | 返回容器尾元素的迭代器，用于逆序遍历 |
+| `c.rend()` | 返回容器首元素之前位置的迭代器，用于逆序遍历 |
+| `c.erase(beg, end)` | 删除容器中从`beg`到`end-1之间`的元素，`beg`和`end`都是迭代器 |
+
+
+
+
+
+
+
+|
 
  
